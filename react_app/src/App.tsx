@@ -2,17 +2,12 @@ import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
+import { BsFillCalendarFill } from "react-icons/bs";
 
 function App() {
-  const [showAlert, setShowAlert] = useState(false);
   return (
     <div>
-      {showAlert && (
-        <Alert onClick={() => setShowAlert(false)}>Button was clicked</Alert>
-      )}
-      <Button color="primary" onClick={() => setShowAlert(true)}>
-        My button
-      </Button>
+      <BsFillCalendarFill color="red" size={40} />
     </div>
   );
 }
