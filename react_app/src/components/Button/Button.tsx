@@ -4,9 +4,14 @@ interface Props {
   onClick: () => void;
 }
 
+import styles from "./Button.module.css";
+
 const Button = ({ children, onClick, color = "primary" }: Props) => {
   return (
-    <button type="button" className={"btn btn-" + color} onClick={onClick}>
+    <button
+      className={[styles.btn, styles["btn-" + color]].join(" ")}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
