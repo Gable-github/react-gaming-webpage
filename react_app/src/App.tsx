@@ -7,6 +7,7 @@ const handleOnClick = () => console.log("Clicked");
 function App() {
   return (
     <div>
+      <Alert>Button was clicked</Alert>
       <Button color="primary" onClick={handleOnClick}>
         My button
       </Button>
