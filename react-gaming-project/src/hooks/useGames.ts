@@ -17,8 +17,8 @@ export interface GameObjects {
     metacritic: 92
   }
 
-const useGames = (selectedGenre: GenreObject | null) => {
-  return useData<GameObjects>('/games', {params: {genres: selectedGenre?.id}}, [selectedGenre?.id])
+const useGames = (selectedGenre: GenreObject | null, selectedPlatform: Platform | null) => {
+  return useData<GameObjects>('/games', {params: {genres: selectedGenre?.id, platform: selectedPlatform?.id}}, [selectedGenre?.id, selectedPlatform?.id])
 }
 
 export default useGames
