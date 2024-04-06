@@ -26,7 +26,8 @@ const useGames = () => {
         .then((res) => setGames(res.data.results))
         .catch((err) => {
             if (err instanceof CanceledError) return;
-            err.message}
+            setError(err.message)
+        }
         );
         
         return () => controller.abort();
