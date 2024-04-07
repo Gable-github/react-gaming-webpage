@@ -2,7 +2,7 @@ import { GameQuery } from "../App";
 import useData from "./useData";
 
 export interface Platform {
-  id: number;
+  id: string;
   slug: string;
   name: string;
 }
@@ -19,7 +19,7 @@ export interface GameObjects {
 const useGames = (gameQuery: GameQuery) => {
   return useData<GameObjects>('/games', {params: {
       genres: gameQuery.genre?.id,
-      platform: gameQuery.platform?.id,
+      platforms: gameQuery.platform?.id,
       ordering: gameQuery.sortOrder,
       search: gameQuery.searchText
     }}, [gameQuery])
